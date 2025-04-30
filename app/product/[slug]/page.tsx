@@ -1,3 +1,5 @@
+import ProductAction from "@/components/ProductAction";
+import ProductQuantity from "@/components/ProductQuantity";
 import { PRODUCT_SLUG_QUERY } from "@/queries/product.queries";
 import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from "@/sanity/lib/live";
@@ -48,11 +50,14 @@ export default async function Page(props: Props) {
                             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                                 <h1 className="text-2xl font-bold">{product.title}</h1>
 
-                                PRODUCT QUANTITY
+                                <ProductQuantity product={product} />
 
                                 <div className="text-2xl font-bold">${product.price}</div>    
                             </div>
                         </div>
+                    </div>
+                    <div className="lg:col-span-1">
+                        <ProductAction />
                     </div>
                 </div>
             </div>
