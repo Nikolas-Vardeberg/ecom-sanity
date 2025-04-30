@@ -15,7 +15,7 @@ export async function POST(req: Request) {
                 currency: "usd",
                 product_data: {
                     name: item.title,
-                    images: [urlFor(item.mainImage).url()], // Wrap the URL in an array
+                    images: [urlFor(item.mainImage).url()],
                 },
                 unit_amount: item.price * 100,
             },
@@ -30,7 +30,7 @@ export async function POST(req: Request) {
                 allowed_countries: ['NO'],
             },
             billing_address_collection: 'required',
-            success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+            success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/success`,
             cancel_url : `${process.env.NEXT_PUBLIC_SITE_URL}`,
         })
 

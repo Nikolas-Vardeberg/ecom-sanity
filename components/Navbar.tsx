@@ -68,7 +68,7 @@ export default function Navbar() {
                             <div className="flex-1 overflow-auto p-6">
                                 <ul className="space-y-6">
                                     {cartItems.map((item) => (
-                                        <li key={item.id} className="flex gap-4">
+                                        <li key={item.title} className="flex gap-4">
                                             <div className="h-24 w-24 shrink-0 overflow-hidden rounded-md border">
                                                 <Image 
                                                     src={urlFor(item.mainImage).url()}

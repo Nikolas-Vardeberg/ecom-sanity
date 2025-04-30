@@ -21,7 +21,7 @@ const ProductAction = (props: Props) => {
                 </div>
 
                 {cartItems.map((item) => (
-                    <div key={item.id} className="grid grid-cols-3 gap-4 text-base font-normal py-4">
+                    <div key={item.title} className="grid grid-cols-3 gap-4 text-base font-normal py-4">
                         <div>{item.title}</div>
                         <div className="text-center">{item.quantity}</div>
                         <div className="text-right">${item.price * item.quantity}</div>
