@@ -38,12 +38,12 @@ export async function POST(req: Request) {
         return NextResponse.json({
             sessionId: session.id,
         })
-    } catch (error) {
+    } catch (error: unknown) {
         console.log("Error", error);
 
         return NextResponse.json(
             { error: "Error creating checkout session" },
-            { status: 500, }
+            { status: 500 }
         )
     }
 }
