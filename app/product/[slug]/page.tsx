@@ -48,7 +48,7 @@ export default async function Page(props: Props) {
                             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                                 <h1 className="text-2xl font-bold">{product.title}</h1>
 
-                                PRODUCT QUANTITY COMPONENT
+                                PRODUCT QUANTITY
 
                                 <div className="text-2xl font-bold">${product.price}</div>    
                             </div>
