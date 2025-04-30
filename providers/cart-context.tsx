@@ -8,11 +8,11 @@ type Props = {
 
 interface CartItem {
     id: string;
-    name: string;
+    title: string;
     price: number;
     quantity: number;
-    images: {
-        src: string;
+    mainImage: {
+        url: string;
     }[]
 }
 

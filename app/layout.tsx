@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Mono } from "next/font/google";
 import "./globals.css";
 import CartProvider from "@/providers/cart-context";
+import Navbar from "@/components/Navbar";
 
 const dmmono = DM_Mono({
   weight: "400",
@@ -24,6 +25,7 @@ export default function RootLayout({
          className={`${dmmono.className} antialiased`}
       >
         <CartProvider>
+          <Navbar />
           {children}
         </CartProvider>
       </body>
