@@ -1,6 +1,7 @@
 "use client"
 
 import { useCart } from "@/hooks/use-cart"
+import Checkout from "./Checkout";
 
 type Props = {}
 
@@ -21,7 +22,7 @@ const ProductAction = (props: Props) => {
 
                 {cartItems.map((item) => (
                     <div key={item.id} className="grid grid-cols-3 gap-4 text-base font-normal py-4">
-                        <div>{item.name}</div>
+                        <div>{item.title}</div>
                         <div className="text-center">{item.quantity}</div>
                         <div className="text-right">${item.price * item.quantity}</div>
                     </div>
@@ -33,7 +34,7 @@ const ProductAction = (props: Props) => {
                     <div>Subtotal</div>
                     <div className="text-right">${cartTotal || 0}</div>
                 </div>
-                CHECKOUT COMPONENT
+                <Checkout />
             </div>
         </div>
     )
