@@ -2,10 +2,9 @@
 
 import { useCart } from "@/hooks/use-cart"
 import Checkout from "./Checkout";
+import { CartItem } from "@/providers/cart-context";
 
-type Props = {}
-
-const ProductAction = (props: Props) => {
+const ProductAction = () => {
     const {
         items: cartItems,
         cartTotal,
@@ -20,7 +19,7 @@ const ProductAction = (props: Props) => {
                     <div className="text-right">Price</div>
                 </div>
 
-                {cartItems.map((item) => (
+                {cartItems.map((item: CartItem) => (
                     <div key={item.title} className="grid grid-cols-3 gap-4 text-base font-normal py-4">
                         <div>{item.title}</div>
                         <div className="text-center">{item.quantity}</div>

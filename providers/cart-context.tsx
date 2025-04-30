@@ -6,7 +6,7 @@ type Props = {
     children: React.ReactNode;
 }
 
-interface CartItem {
+export interface CartItem {
     id: string;
     title: string;
     price: number;

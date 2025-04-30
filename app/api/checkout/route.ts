@@ -1,3 +1,4 @@
+import { CartItem } from "@/providers/cart-context";
 import { urlFor } from "@/sanity/lib/image";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
@@ -10,7 +11,7 @@ export async function POST(req: Request) {
     try {
         const { items } = await req.json();
 
-        const lineItems = items.map((item: any) => ({
+        const lineItems = items.map((item: CartItem) => ({
             price_data: {
                 currency: "usd",
                 product_data: {

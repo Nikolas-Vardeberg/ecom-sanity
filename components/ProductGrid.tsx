@@ -3,7 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
-    products: any[];
+    products: Product[];
+}
+
+export type Product = {
+    id: string;
+    title: string;
+    mainImage: string;
+    price: number;
+    slug: {
+        current: string;
+    },
 }
 
 const ProductGrid = ({ products }: Props) => {

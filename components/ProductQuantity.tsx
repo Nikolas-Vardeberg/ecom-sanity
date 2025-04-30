@@ -1,13 +1,14 @@
 "use client"
 
 import { useCart } from "@/hooks/use-cart";
+import { Product } from "./ProductGrid";
 
 type Props = {
-    product: any;
+    product: Product;
 }
 
 const ProductQuantity = ({ product }: Props) => {
-    const { items: cartItems, addItem: addToCart, removeItem: removeFromCart, updateQuantity, cartTotal, isOpen, setIsOpen } = useCart();
+    const { items: cartItems, addItem: addToCart, updateQuantity } = useCart();
     
     const currProductQuantity = cartItems.find((item) => item.id === product.id)?.quantity || 0;
 

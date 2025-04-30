@@ -3,17 +3,13 @@
 import { useCart } from "@/hooks/use-cart"
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { loadStripe } from "@stripe/stripe-js"
-
-type Props = {
-
-}
+import { loadStripe, Stripe } from "@stripe/stripe-js"
 
 const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-)
+) as Promise<Stripe | null>;
 
-const Checkout = (props: Props) => {
+const Checkout = () => {
     const { items } = useCart();
     const [loading, setLoading] = useState(false);
 
