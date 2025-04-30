@@ -8,10 +8,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
-    params: {
+    params: Promise<{
           slug: string;
-      };
-};
+      }>;
+  };
 
 const getHook = async ({ params }: { params: QueryParams }) => {
     return await sanityFetch({ query: PRODUCT_SLUG_QUERY, params: { ...params } });
